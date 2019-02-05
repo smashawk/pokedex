@@ -1,0 +1,67 @@
+.App {
+  width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  vertical-align: middle;
+  background: center / contain no-repeat;
+  @for $No from 1 to 10 {
+    &.imgNo#{$No} {
+      background-image: url(../images/00#{$No}_0.png);
+    }
+  }
+  @for $No from 10 to 100 {
+    &.imgNo#{$No} {
+      background-image: url(../images/0#{$No}_0.png);
+    }
+  }
+  @for $No from 100 to 803 {
+    &.imgNo#{$No} {
+      background-image: url(../images/#{$No}_0.png);
+    }
+  }
+}
+.searchSectionInput {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  .inputText {
+    width: 200px;
+  }
+  .errorText {
+    color: #ff0000;
+    font-size: 14px;
+  }
+  .outputArea {
+    width: 450px;
+    dl {
+      display: inline-block;
+      width: 300px;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+    dt {
+      display: inline-block;
+      width: 150px;
+    }
+    dd {
+      display: inline-block;
+      width: 150px;
+      span {
+        + span {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.searchSectionType {
+  margin-top: 50px;
+}
