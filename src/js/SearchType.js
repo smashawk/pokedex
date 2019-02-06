@@ -29,7 +29,7 @@ class SearchType extends Component {
         <li 
           key={this.props.typeArray[i].key}
           id={this.props.typeArray[i].number.no}
-          className={"img imgNo" + this.props.typeArray[i].number.no}
+          className={"img imgType imgNo" + this.props.typeArray[i].number.no}
           onClick={e => this.showData(e)}
         >
         </li>
@@ -93,6 +93,7 @@ class SearchType extends Component {
         />
         
         <div>
+          <p id="FnClickTypeText" className="clickTypeText">ポケモンをクリック！</p>
           <ul className="typeShowData">{nodes}</ul>
         </div>
       </section>

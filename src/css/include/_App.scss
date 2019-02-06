@@ -26,28 +26,37 @@
       background-image: url(../images/#{$No}_0.png);
     }
   }
+  &.imgType {
+    width: 110px;
+    height: 110px;
+    background-size: 100px 100px;
+    cursor: pointer;
+    &:hover {
+      background-size: contain;
+
+    }
+  }
+}
+.imgColor {
+  width: 105px;
+  height: 105px;
   @for $No from 1 to 10 {
     &.imgColorNo#{$No} {
-      width: 105px;
-      height: 105px;
       background-image: url(../images/00#{$No}_2.png);
     }
   }
   @for $No from 10 to 100 {
     &.imgColorNo#{$No} {
-      width: 105px;
-      height: 105px;
       background-image: url(../images/0#{$No}_2.png);
     }
   }
   @for $No from 100 to 803 {
     &.imgColorNo#{$No} {
-      width: 105px;
-      height: 105px;
       background-image: url(../images/#{$No}_2.png);
     }
   }
 }
+
 .searchSectionInput {
   display: flex;
   justify-content: center;
@@ -64,7 +73,8 @@
   width: 550px;
   dl {
     display: inline-block;
-    width: 300px;
+    width: 330px;
+    height: 150px;
     margin-bottom: 0;
     vertical-align: middle;
   }
@@ -90,5 +100,12 @@
   margin-top: 50px;
   .typeShowData {
     width: 1120px;
+  }
+  .clickTypeText {
+    display: none;
+    margin: 0;
+    &.is-show {
+      display: block;
+    }
   }
 }

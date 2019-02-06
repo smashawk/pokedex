@@ -60,6 +60,10 @@ class App extends Component {
   }
 
   decideType(e) {
+
+    // テキストを表示
+    this.showTypeText();
+    
     const typeSelector1Value = document.getElementById('typeSelector1').value;
     const typeSelector2Value = document.getElementById('typeSelector2').value;
     console.log(typeSelector1Value)
@@ -116,6 +120,12 @@ class App extends Component {
       });
 
     }
+  }
+
+  showTypeText() {
+
+    const clickTypeText = document.getElementById('FnClickTypeText');
+    clickTypeText.classList.add("is-show");
   }
   
   render() {
