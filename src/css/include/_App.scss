@@ -38,30 +38,36 @@
     color: #ff0000;
     font-size: 14px;
   }
-  .outputArea {
-    width: 450px;
-    dl {
-      display: inline-block;
-      width: 300px;
-      margin-bottom: 0;
-      vertical-align: middle;
-    }
-    dt {
-      display: inline-block;
-      width: 150px;
-    }
-    dd {
-      display: inline-block;
-      width: 150px;
-      span {
-        + span {
-          margin-left: 10px;
-        }
+}
+.outputArea {
+  width: 450px;
+  dl {
+    display: inline-block;
+    width: 300px;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  dt {
+    display: inline-block;
+    width: 150px;
+  }
+  dd {
+    display: inline-block;
+    width: 150px;
+    span {
+      + span {
+        margin-left: 10px;
       }
     }
   }
 }
 
 .searchSectionType {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 50px;
+  .typeShowData {
+    width: 1120px;
+  }
 }

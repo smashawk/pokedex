@@ -1898,21 +1898,27 @@ template {
   .searchSectionInput .errorText {
     color: #ff0000;
     font-size: 14px; }
-  .searchSectionInput .outputArea {
-    width: 450px; }
-    .searchSectionInput .outputArea dl {
-      display: inline-block;
-      width: 300px;
-      margin-bottom: 0;
-      vertical-align: middle; }
-    .searchSectionInput .outputArea dt {
-      display: inline-block;
-      width: 150px; }
-    .searchSectionInput .outputArea dd {
-      display: inline-block;
-      width: 150px; }
-      .searchSectionInput .outputArea dd span + span {
-        margin-left: 10px; }
+
+.outputArea {
+  width: 450px; }
+  .outputArea dl {
+    display: inline-block;
+    width: 300px;
+    margin-bottom: 0;
+    vertical-align: middle; }
+  .outputArea dt {
+    display: inline-block;
+    width: 150px; }
+  .outputArea dd {
+    display: inline-block;
+    width: 150px; }
+    .outputArea dd span + span {
+      margin-left: 10px; }
 
 .searchSectionType {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 50px; }
+  .searchSectionType .typeShowData {
+    width: 1120px; }

@@ -117,18 +117,6 @@ class App extends Component {
 
     }
   }
-
-  showData(e) {
-    const typeSearchPokemon = e.target.id;
-    console.log(typeSearchPokemon)
-
-    this.setState({
-      detailData: typeSearchPokemon
-    });
-
-    
-    
-  }
   
   render() {
     
@@ -147,7 +135,6 @@ class App extends Component {
 
         <SearchType 
           decideType={e => this.decideType(e)}
-          showData={e => this.showData(e)}
           normalArray={this.state.normalArray}
           typeArray={this.state.typeArray}
           detailData={this.state.detailData}

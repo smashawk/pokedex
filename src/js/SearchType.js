@@ -1,90 +1,105 @@
-import React from "react";
+import React, { Component } from "react";
+import ShowData from './ShowData';
 
-const SearchType = (props) => {
 
-  const nodes = [];
-  for(let i = 0; i<props.typeArray.length; i++) {
-    nodes.push(
-      <li 
-        key={props.typeArray[i].key}
-        id={props.typeArray[i].number.no}
-        className={"img imgNo" + props.typeArray[i].number.no}
-        onClick={e => props.showData(e)}
-      >
-      </li>
-    );
+
+class SearchType extends Component {
+  constructor() {
+    super();
+    this.state = {
+      detailData: 1
+    }
   }
 
-  console.log(props.normalArray[Number(props.detailData) - 1])
-  return(
-    
-    <section className="searchSectionType">
-      <h2>2. タイプ検索</h2>
+  showData(e) {
+    const typeSearchPokemon = e.target.id;
+    console.log(typeSearchPokemon)
 
-      {/* <div className="outputArea">
-        <dl>
-          <dt>図鑑番号</dt>
-          <dd>{props.normalArray[props.detailData].no}</dd>
-          <dt>名前</dt>
-          <dd>{props.normalArray[Number(props.detailData) - 1]}</dd>
-          <dt>タイプ</dt>
-          <dd>
-            <span>{props.normalArray[props.detailDatadetailData].types[0]}</span>
-            <span>{props.normalArray[props.detailDatadetailData].types[1]}</span>
-          </dd>
-        </dl>
-        <div className={"img imgNo" + props.inputNumber}></div>
-      </div> */}
+    this.setState({
+      detailData: typeSearchPokemon
+    });
 
-      {/* <p>{props.normalArray[Number(props.detailData.no) - 1].name}</p> */}
-      <select id="typeSelector1" onChange={e => props.decideType(e)}>
-        <option>-</option>
-        <option>ノーマル</option>
-        <option>ほのお</option>
-        <option>みず</option>
-        <option>でんき</option>
-        <option>くさ</option>
-        <option>こおり</option>
-        <option>かくとう</option>
-        <option>どく</option>
-        <option>じめん</option>
-        <option>ひこう</option>
-        <option>エスパー</option>
-        <option>むし</option>
-        <option>いわ</option>
-        <option>ゴースト</option>
-        <option>ドラゴン</option>
-        <option>あく</option>
-        <option>はがね</option>
-        <option>フェアリー</option>
-      </select>
-      <select id="typeSelector2" onChange={e => props.decideType(e)}>
-        <option>-</option>
-        <option>ノーマル</option>
-        <option>ほのお</option>
-        <option>みず</option>
-        <option>でんき</option>
-        <option>くさ</option>
-        <option>こおり</option>
-        <option>かくとう</option>
-        <option>どく</option>
-        <option>じめん</option>
-        <option>ひこう</option>
-        <option>エスパー</option>
-        <option>むし</option>
-        <option>いわ</option>
-        <option>ゴースト</option>
-        <option>ドラゴン</option>
-        <option>あく</option>
-        <option>はがね</option>
-        <option>フェアリー</option>
-      </select>
-      <div>
-        <ul>{nodes}</ul>
-      </div>
-    </section>
+  }
 
-  )
+  render() {
+
+    const nodes = [];
+    for(let i = 0; i<this.props.typeArray.length; i++) {
+      nodes.push(
+        <li 
+          key={this.props.typeArray[i].key}
+          id={this.props.typeArray[i].number.no}
+          className={"img imgNo" + this.props.typeArray[i].number.no}
+          onClick={e => this.showData(e)}
+        >
+        </li>
+      );
+    }
+  
+    // console.log(this.props.normalArray[Number(this.props.detailData) - 1])
+    return(
+      
+      <section className="searchSectionType">
+       <div className="inputArea">
+        <h2>2. タイプ検索</h2>
+        <select id="typeSelector1" onChange={e => this.props.decideType(e)}>
+          <option>-</option>
+          <option>ノーマル</option>
+          <option>ほのお</option>
+          <option>みず</option>
+          <option>でんき</option>
+          <option>くさ</option>
+          <option>こおり</option>
+          <option>かくとう</option>
+          <option>どく</option>
+          <option>じめん</option>
+          <option>ひこう</option>
+          <option>エスパー</option>
+          <option>むし</option>
+          <option>いわ</option>
+          <option>ゴースト</option>
+          <option>ドラゴン</option>
+          <option>あく</option>
+          <option>はがね</option>
+          <option>フェアリー</option>
+        </select>
+        <select id="typeSelector2" onChange={e => this.props.decideType(e)}>
+          <option>-</option>
+          <option>ノーマル</option>
+          <option>ほのお</option>
+          <option>みず</option>
+          <option>でんき</option>
+          <option>くさ</option>
+          <option>こおり</option>
+          <option>かくとう</option>
+          <option>どく</option>
+          <option>じめん</option>
+          <option>ひこう</option>
+          <option>エスパー</option>
+          <option>むし</option>
+          <option>いわ</option>
+          <option>ゴースト</option>
+          <option>ドラゴン</option>
+          <option>あく</option>
+          <option>はがね</option>
+          <option>フェアリー</option>
+        </select>
+       </div>
+
+        <ShowData 
+          showData={e => this.showData(e)}
+          detailData={this.state.detailData}
+          normalArray={this.props.normalArray}
+        />
+        
+        <div>
+          <ul className="typeShowData">{nodes}</ul>
+        </div>
+      </section>
+  
+    )
+  }
+
 }
 
 export default SearchType;
