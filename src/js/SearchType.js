@@ -84,6 +84,7 @@ class SearchType extends Component {
           <option>はがね</option>
           <option>フェアリー</option>
         </select>
+       <button onClick={(e) => this.props.resetType(e)} className="resetType">タイプリセット</button>
        </div>
 
         <ShowData 

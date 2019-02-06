@@ -3538,6 +3538,10 @@ template {
   margin-top: 50px; }
   .searchSectionType .typeShowData {
     width: 1120px; }
+  .searchSectionType .inputArea {
+    width: 220px; }
+    .searchSectionType .inputArea .resetType {
+      margin-top: 20px; }
   .searchSectionType .clickTypeText {
     display: none;
     margin: 0; }

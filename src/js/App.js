@@ -63,15 +63,12 @@ class App extends Component {
 
     // テキストを表示
     this.showTypeText();
-    
+
     const typeSelector1Value = document.getElementById('typeSelector1').value;
     const typeSelector2Value = document.getElementById('typeSelector2').value;
-    console.log(typeSelector1Value)
-    console.log(typeSelector2Value)
     
     if( !(typeSelector1Value !== '-' && typeSelector2Value !== '-')) {
       const typeArray = [];
-      console.log('typeひとつ')
     
         for(let i = 0; i<this.state.normalArray.length; i++){
           for(let j = 0; j < 2; j++) {
@@ -87,13 +84,9 @@ class App extends Component {
           typeArray: typeArray
         });
 
-      console.log('typearray', typeArray)
-
     } else {
       const typeArray = [];
       const subTypeArray = [];
-      console.log('typeふたつ')
-      console.log(e.target.value)
 
       for(let i = 0; i<this.state.normalArray.length; i++){
         for(let j = 0; j < 2; j++) {
@@ -105,7 +98,6 @@ class App extends Component {
           }
         }
       }
-      console.log('typearray', typeArray)
 
       for(let i = 0; i<typeArray.length; i++){
         for(let j = 0; j < 2; j++) {
@@ -114,7 +106,6 @@ class App extends Component {
           }
         }
       }
-      console.log('subtypearray', subTypeArray)
       this.setState({
         typeArray: subTypeArray
       });
@@ -127,10 +118,25 @@ class App extends Component {
     const clickTypeText = document.getElementById('FnClickTypeText');
     clickTypeText.classList.add("is-show");
   }
+  removeTypeText() {
+
+    const clickTypeText = document.getElementById('FnClickTypeText');
+    clickTypeText.classList.remove("is-show");
+  }
+
+  resetType() {
+    const typeSelector1 = document.getElementById('typeSelector1');
+    const typeSelector2 = document.getElementById('typeSelector2');
+
+    typeSelector1.value = '-';
+    typeSelector2.value = '-';
+
+    this.decideType();
+    this.removeTypeText();
+  }
   
   render() {
     
-    console.log('detaildata', this.state.detailData)
     return (
       
       <div className="App">
@@ -145,6 +151,7 @@ class App extends Component {
 
         <SearchType 
           decideType={e => this.decideType(e)}
+          resetType={e => this.resetType(e)}
           normalArray={this.state.normalArray}
           typeArray={this.state.typeArray}
           detailData={this.state.detailData}
