@@ -11,7 +11,8 @@ class App extends Component {
       normalArray : [],
       typeArray : [],
       subTypeArray : [],
-      errorText : ''
+      errorText : '',
+      detailData : ''
     };
 
     this.createNormalArray();
@@ -117,13 +118,23 @@ class App extends Component {
     }
   }
 
-  decideSubType(e) {
+  showData(e) {
+    const typeSearchPokemon = e.target.id;
+    console.log(typeSearchPokemon)
+
+    this.setState({
+      detailData: typeSearchPokemon
+    });
+
+    
+    
   }
-
+  
   render() {
-
+    
+    console.log('detaildata', this.state.detailData)
     return (
-
+      
       <div className="App">
         <h1>ポケモン図鑑</h1>
 
@@ -136,7 +147,10 @@ class App extends Component {
 
         <SearchType 
           decideType={e => this.decideType(e)}
+          showData={e => this.showData(e)}
+          normalArray={this.state.normalArray}
           typeArray={this.state.typeArray}
+          detailData={this.state.detailData}
         />
 
       </div>
