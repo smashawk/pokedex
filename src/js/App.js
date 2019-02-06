@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import data from '../data/pokemon_data.json';
+import SearchPokemon from "./SearchPokemon";
+import SearchType from './SearchType';
 
 class App extends Component {
   constructor() {
@@ -73,71 +75,26 @@ class App extends Component {
   }
 
   render() {
-    const nodes = [];
-      for(let i = 0; i<this.state.typeArray.length; i++) {
-        nodes.push(
-          <li key={this.state.typeArray[i].key} className={"img imgNo" + this.state.typeArray[i].number.no}></li>
-        );
-      }
 
     return (
+
       <div className="App">
         <h1>ポケモン図鑑</h1>
-        <section className="searchSectionInput">
-          <div className="inputArea">
-            <h2>1. 名前or図鑑ナンバー検索</h2>
-            <p>※番号は1〜802まで</p>
-            <input 
-              id="inputText"
-              className="inputText"
-              type="text"
-              onChange={e => this.decidePokemon(e)}
-              placeholder="名前or図鑑ナンバーを入力"
-              />
-            <p className="errorText">{this.state.errorText}</p>
-          </div>
-          <div className="outputArea">
-            <dl>
-              <dt>図鑑番号</dt>
-              <dd>{this.state.normalArray[Number(this.state.inputNumber) - 1].no}</dd>
-              <dt>名前</dt>
-              <dd>{this.state.normalArray[Number(this.state.inputNumber) - 1].name}</dd>
-              <dt>タイプ</dt>
-              <dd>
-                <span>{this.state.normalArray[Number(this.state.inputNumber) - 1].types[0]}</span>
-                <span>{this.state.normalArray[Number(this.state.inputNumber) - 1].types[1]}</span>
-              </dd>
-            </dl>
-            <div className={"img imgNo" + this.state.inputNumber}></div>
-          </div>
-        </section>
-        <section className="searchSectionType">
-          <h2>2. タイプ検索</h2>
-          <select onChange={e => this.decideType(e)}>
-            <option>ノーマル</option>
-            <option>ほのお</option>
-            <option>みず</option>
-            <option>でんき</option>
-            <option>くさ</option>
-            <option>こおり</option>
-            <option>かくとう</option>
-            <option>どく</option>
-            <option>じめん</option>
-            <option>ひこう</option>
-            <option>エスパー</option>
-            <option>むし</option>
-            <option>いわ</option>
-            <option>ゴースト</option>
-            <option>ドラゴン</option>
-            <option>あく</option>
-            <option>はがね</option>
-            <option>フェアリー</option>
-          </select>
-          <div>
-            <ul>{nodes}</ul>
-          </div>
-        </section>
+        
+        <SearchPokemon
+          decidePokemon={e => this.decidePokemon(e)}
+          errorText={this.state.errorText}
+          normalArray={this.state.normalArray}
+          inputNumber={this.state.inputNumber}
+        />
+
+        <SearchType 
+          decideType={e => this.decideType(e)}
+          typeArray={this.state.typeArray}
+        />
+
       </div>
+
     );
   }
 }
