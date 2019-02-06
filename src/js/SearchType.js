@@ -8,6 +8,12 @@ const SearchType = (props) => {
       <li key={props.typeArray[i].key} className={"img imgNo" + props.typeArray[i].number.no}></li>
     );
   }
+  const nodes2 = [];
+  for(let i = 0; i<props.subTypeArray.length; i++) {
+    nodes2.push(
+      <li key={props.subTypeArray[i].key} className={"img imgNo" + props.subTypeArray[i].number.number.no}></li>
+    );
+  }
 
   return(
     
@@ -33,8 +39,29 @@ const SearchType = (props) => {
         <option>はがね</option>
         <option>フェアリー</option>
       </select>
+      <select onChange={e => props.decideSubType(e)}>
+        <option>ノーマル</option>
+        <option>ほのお</option>
+        <option>みず</option>
+        <option>でんき</option>
+        <option>くさ</option>
+        <option>こおり</option>
+        <option>かくとう</option>
+        <option>どく</option>
+        <option>じめん</option>
+        <option>ひこう</option>
+        <option>エスパー</option>
+        <option>むし</option>
+        <option>いわ</option>
+        <option>ゴースト</option>
+        <option>ドラゴン</option>
+        <option>あく</option>
+        <option>はがね</option>
+        <option>フェアリー</option>
+      </select>
       <div>
         <ul>{nodes}</ul>
+        <ul>{nodes2}</ul>
       </div>
     </section>
 

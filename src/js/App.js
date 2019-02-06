@@ -10,6 +10,7 @@ class App extends Component {
       inputNumber: '1',
       normalArray : [],
       typeArray : [],
+      subTypeArray : [],
       errorText : ''
     };
 
@@ -74,13 +75,33 @@ class App extends Component {
     });
   }
 
+  decideSubType(e) {
+    const subTypeArray = [];
+    for(let i = 0; i<this.state.typeArray.length; i++){
+      for(let j = 0; j < 2; j++) {
+        console.log(e.target.value)
+        if(this.state.typeArray[i].number.types[j] === e.target.value) {
+          subTypeArray.push({
+            key: i,
+            number: this.state.typeArray[i]
+          })
+        }
+      }
+    }
+    console.log(this.state.typeArray)
+    console.log(subTypeArray)
+    this.setState({
+      subTypeArray: subTypeArray
+    });
+  }
+
   render() {
 
     return (
 
       <div className="App">
         <h1>ポケモン図鑑</h1>
-        
+
         <SearchPokemon
           decidePokemon={e => this.decidePokemon(e)}
           errorText={this.state.errorText}
@@ -90,7 +111,9 @@ class App extends Component {
 
         <SearchType 
           decideType={e => this.decideType(e)}
+          decideSubType={e => this.decideSubType(e)}
           typeArray={this.state.typeArray}
+          subTypeArray={this.state.subTypeArray}
         />
 
       </div>
