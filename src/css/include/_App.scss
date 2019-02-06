@@ -26,6 +26,27 @@
       background-image: url(../images/#{$No}_0.png);
     }
   }
+  @for $No from 1 to 10 {
+    &.imgColorNo#{$No} {
+      width: 105px;
+      height: 105px;
+      background-image: url(../images/00#{$No}_2.png);
+    }
+  }
+  @for $No from 10 to 100 {
+    &.imgColorNo#{$No} {
+      width: 105px;
+      height: 105px;
+      background-image: url(../images/0#{$No}_2.png);
+    }
+  }
+  @for $No from 100 to 803 {
+    &.imgColorNo#{$No} {
+      width: 105px;
+      height: 105px;
+      background-image: url(../images/#{$No}_2.png);
+    }
+  }
 }
 .searchSectionInput {
   display: flex;
@@ -40,7 +61,7 @@
   }
 }
 .outputArea {
-  width: 450px;
+  width: 550px;
   dl {
     display: inline-block;
     width: 300px;

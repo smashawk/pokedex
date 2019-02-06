@@ -17,6 +17,7 @@ const ShowData = (props) =>  {
           </dd>
         </dl>
         <div className={"img imgNo" + props.detailData}></div>
+        <div className={"img imgColorNo" + props.detailData}></div>
       </div>
   
   )
