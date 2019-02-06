@@ -1,6 +1,6 @@
 .App {
   width: 1120px;
-  margin: 0 auto;
+  margin: 40px auto 0;
   text-align: center;
 }
 
@@ -69,6 +69,11 @@
     font-size: 14px;
   }
 }
+
+.inputAreaText {
+  margin: 0;
+}
+
 .outputArea {
   width: 550px;
   dl {

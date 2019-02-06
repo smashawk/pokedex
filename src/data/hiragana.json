@@ -1,0 +1,318 @@
+[
+  {
+    "char" : "あ",
+    "number" : 1
+  },
+  {
+    "char" : "い",
+    "number" : 2
+  },
+  {
+    "char" : "う",
+    "number" : 3
+  },
+  {
+    "char" : "え",
+    "number" : 4
+  },
+  {
+    "char" : "お",
+    "number" : 5
+  },
+  {
+    "char" : "か",
+    "number" : 6
+  },
+  {
+    "char" : "き",
+    "number" : 7
+  },
+  {
+    "char" : "く",
+    "number" : 8
+  },
+  {
+    "char" : "け",
+    "number" : 9
+  },
+  {
+    "char" : "こ",
+    "number" : 10
+  },
+  {
+    "char" : "さ",
+    "number" : 11
+  },
+  {
+    "char" : "し",
+    "number" : 12
+  },
+  {
+    "char" : "す",
+    "number" : 13
+  },
+  {
+    "char" : "せ",
+    "number" : 14
+  },
+  {
+    "char" : "そ",
+    "number" : 15
+  },
+  {
+    "char" : "た",
+    "number" : 16
+  },
+  {
+    "char" : "ち",
+    "number" : 17
+  },
+  {
+    "char" : "つ",
+    "number" : 18
+  },
+  {
+    "char" : "て",
+    "number" : 19
+  },
+  {
+    "char" : "と",
+    "number" : 20
+  },
+  {
+    "char" : "な",
+    "number" : 21
+  },
+  {
+    "char" : "に",
+    "number" : 22
+  },
+  {
+    "char" : "ぬ",
+    "number" : 23
+  },
+  {
+    "char" : "ね",
+    "number" : 24
+  },
+  {
+    "char" : "の",
+    "number" : 25
+  },
+  {
+    "char" : "は",
+    "number" : 26
+  },
+  {
+    "char" : "ひ",
+    "number" : 27
+  },
+  {
+    "char" : "ふ",
+    "number" : 28
+  },
+  {
+    "char" : "へ",
+    "number" : 29
+  },
+  {
+    "char" : "ほ",
+    "number" : 30
+  },
+  {
+    "char" : "ま",
+    "number" : 31
+  },
+  {
+    "char" : "み",
+    "number" : 32
+  },
+  {
+    "char" : "む",
+    "number" : 33
+  },
+  {
+    "char" : "め",
+    "number" : 34
+  },
+  {
+    "char" : "も",
+    "number" : 35
+  },
+  {
+    "char" : "や",
+    "number" : 36
+  },
+  {
+    "char" : "ゆ",
+    "number" : 37
+  },
+  {
+    "char" : "よ",
+    "number" : 38
+  },
+  {
+    "char" : "ら",
+    "number" : 39
+  },
+  {
+    "char" : "り",
+    "number" : 40
+  },
+  {
+    "char" : "る",
+    "number" : 41
+  },
+  {
+    "char" : "れ",
+    "number" : 42
+  },
+  {
+    "char" : "ろ",
+    "number" : 43
+  },
+  {
+    "char" : "わ",
+    "number" : 44
+  },
+  {
+    "char" : "を",
+    "number" : 45
+  },
+  {
+    "char" : "ん",
+    "number" : 46
+  },
+  {
+    "char" : "が",
+    "number" : 47
+  },
+  {
+    "char" : "ぎ",
+    "number" : 48
+  },
+  {
+    "char" : "ぐ",
+    "number" : 49
+  },
+  {
+    "char" : "げ",
+    "number" : 50
+  },
+  {
+    "char" : "ご",
+    "number" : 51
+  },
+  {
+    "char" : "ざ",
+    "number" : 52
+  },
+  {
+    "char" : "じ",
+    "number" : 53
+  },
+  {
+    "char" : "ず",
+    "number" : 54
+  },
+  {
+    "char" : "ぜ",
+    "number" : 55
+  },
+  {
+    "char" : "ぞ",
+    "number" : 56
+  },
+  {
+    "char" : "だ",
+    "number" : 57
+  },
+  {
+    "char" : "ぢ",
+    "number" : 58
+  },
+  {
+    "char" : "づ",
+    "number" : 59
+  },
+  {
+    "char" : "で",
+    "number" : 60
+  },
+  {
+    "char" : "ど",
+    "number" : 61
+  },
+  {
+    "char" : "ば",
+    "number" : 62
+  },
+  {
+    "char" : "び",
+    "number" : 63
+  },
+  {
+    "char" : "ぶ",
+    "number" : 64
+  },
+  {
+    "char" : "べ",
+    "number" : 65
+  },
+  {
+    "char" : "ぼ",
+    "number" : 66
+  },
+  {
+    "char" : "ぱ",
+    "number" : 67
+  },
+  {
+    "char" : "ぴ",
+    "number" : 68
+  },
+  {
+    "char" : "ぷ",
+    "number" : 69
+  },
+  {
+    "char" : "ぺ",
+    "number" : 70
+  },
+  {
+    "char" : "ぽ",
+    "number" : 71
+  },
+  {
+    "char" : "ぁ",
+    "number" : 72
+  },
+  {
+    "char" : "ぃ",
+    "number" : 73
+  },
+  {
+    "char" : "ぅ",
+    "number" : 74
+  },
+  {
+    "char" : "ぇ",
+    "number" : 75
+  },
+  {
+    "char" : "ぉ",
+    "number" : 76
+  },
+  {
+    "char" : "ゃ",
+    "number" : 77
+  },
+  {
+    "char" : "ゅ",
+    "number" : 78
+  },
+  {
+    "char" : "ょ",
+    "number" : 79
+  }
+]
