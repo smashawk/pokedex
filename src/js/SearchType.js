@@ -8,18 +8,13 @@ const SearchType = (props) => {
       <li key={props.typeArray[i].key} className={"img imgNo" + props.typeArray[i].number.no}></li>
     );
   }
-  const nodes2 = [];
-  for(let i = 0; i<props.subTypeArray.length; i++) {
-    nodes2.push(
-      <li key={props.subTypeArray[i].key} className={"img imgNo" + props.subTypeArray[i].number.number.no}></li>
-    );
-  }
 
   return(
     
     <section className="searchSectionType">
       <h2>2. タイプ検索</h2>
-      <select onChange={e => props.decideType(e)}>
+      <select id="typeSelector1" onChange={e => props.decideType(e)}>
+        <option>-</option>
         <option>ノーマル</option>
         <option>ほのお</option>
         <option>みず</option>
@@ -39,7 +34,8 @@ const SearchType = (props) => {
         <option>はがね</option>
         <option>フェアリー</option>
       </select>
-      <select onChange={e => props.decideSubType(e)}>
+      <select id="typeSelector2" onChange={e => props.decideType(e)}>
+        <option>-</option>
         <option>ノーマル</option>
         <option>ほのお</option>
         <option>みず</option>
@@ -61,7 +57,6 @@ const SearchType = (props) => {
       </select>
       <div>
         <ul>{nodes}</ul>
-        <ul>{nodes2}</ul>
       </div>
     </section>
 

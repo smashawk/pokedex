@@ -59,40 +59,65 @@ class App extends Component {
   }
 
   decideType(e) {
-    const typeArray = [];
-    for(let i = 0; i<this.state.normalArray.length; i++){
-      for(let j = 0; j < 2; j++) {
-        if(this.state.normalArray[i].types[j] === e.target.value) {
-          typeArray.push({
-            key: i,
-            number: this.state.normalArray[i]
-          })
+    const typeSelector1Value = document.getElementById('typeSelector1').value;
+    const typeSelector2Value = document.getElementById('typeSelector2').value;
+    console.log(typeSelector1Value)
+    console.log(typeSelector2Value)
+    
+    if( !(typeSelector1Value !== '-' && typeSelector2Value !== '-')) {
+      const typeArray = [];
+      console.log('typeひとつ')
+    
+        for(let i = 0; i<this.state.normalArray.length; i++){
+          for(let j = 0; j < 2; j++) {
+            if(this.state.normalArray[i].types[j] === typeSelector1Value || this.state.normalArray[i].types[j] === typeSelector2Value) {
+              typeArray.push({
+                key: i,
+                number: this.state.normalArray[i]
+              })
+            }
+          }
+        }
+        this.setState({
+          typeArray: typeArray
+        });
+
+      console.log('typearray', typeArray)
+
+    } else {
+      const typeArray = [];
+      const subTypeArray = [];
+      console.log('typeふたつ')
+      console.log(e.target.value)
+
+      for(let i = 0; i<this.state.normalArray.length; i++){
+        for(let j = 0; j < 2; j++) {
+          if(this.state.normalArray[i].types[j] === typeSelector1Value) {
+            typeArray.push({
+              key: i,
+              number: this.state.normalArray[i]
+            })
+          }
         }
       }
+      console.log('typearray', typeArray)
+
+      for(let i = 0; i<typeArray.length; i++){
+        for(let j = 0; j < 2; j++) {
+          if(typeArray[i].number.types[j] === typeSelector2Value) {
+            subTypeArray.push(typeArray[i])
+          }
+        }
+      }
+      console.log('subtypearray', subTypeArray)
+      this.setState({
+        typeArray: subTypeArray
+      });
+
     }
-    this.setState({
-      typeArray: typeArray
-    });
   }
 
   decideSubType(e) {
-    const subTypeArray = [];
-    for(let i = 0; i<this.state.typeArray.length; i++){
-      for(let j = 0; j < 2; j++) {
-        console.log(e.target.value)
-        if(this.state.typeArray[i].number.types[j] === e.target.value) {
-          subTypeArray.push({
-            key: i,
-            number: this.state.typeArray[i]
-          })
-        }
-      }
-    }
-    console.log(this.state.typeArray)
-    console.log(subTypeArray)
-    this.setState({
-      subTypeArray: subTypeArray
-    });
   }
 
   render() {
@@ -111,9 +136,7 @@ class App extends Component {
 
         <SearchType 
           decideType={e => this.decideType(e)}
-          decideSubType={e => this.decideSubType(e)}
           typeArray={this.state.typeArray}
-          subTypeArray={this.state.subTypeArray}
         />
 
       </div>
