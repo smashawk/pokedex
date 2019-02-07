@@ -169,7 +169,7 @@ class SearchPartner extends Component {
         <div className="outputArea">
           <img src={this.state.user.item_list[0].photo_url} alt="" id="nijiImg" className="nijiImg" />
           <div>
-            <p id="partnerText" className="partnerText">{this.state.user.item_list[0].user_name}<span id="partnerSubText" className="partnerSubText">は</span>きみにきめた！</p>
+            <p id="partnerText" className="partnerText">{this.state.user.item_list[0].user_name}<span id="partnerSubText" className="partnerSubText">は</span>{this.props.normalArray[Number(this.state.resultNo) - 1].name}にきめた！</p>
             <div>
               <dl>
                 <dt>図鑑番号</dt>
