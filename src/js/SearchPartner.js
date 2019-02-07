@@ -11,6 +11,7 @@ class SearchPartner extends Component {
       departmentList : [],
       user: {
         item_list : [{
+          user_name : '',
           photo_url : ''
         }]
       },
@@ -52,7 +53,6 @@ class SearchPartner extends Component {
     .then(this.commonResponseHandling)
     .then((result)=>{
       this.setState({departmentList : result});
-      console.log(this.state.departmentList)
     })
   }
   loadUser(){
@@ -114,6 +114,7 @@ class SearchPartner extends Component {
 
     const inputNameValue = document.getElementById('inputName').value;
     const partnerText = document.getElementById('partnerText')
+    const partnerSubText = document.getElementById('partnerSubText')
     const nijiImg = document.getElementById('nijiImg')
 
 
@@ -124,13 +125,21 @@ class SearchPartner extends Component {
         partnerText.classList.add('is-show');
         if(result.item_list[0]) {
           nijiImg.classList.add('is-show');
+          partnerSubText.classList.add('is-show');
           this.setState({
             user : result,
             resultNo : resultNo
           });
         } else {
           nijiImg.classList.remove('is-show');
+          partnerSubText.classList.remove('is-show');
           this.setState({
+            user: {
+              item_list : [{
+                user_name : '',
+                photo_url : ''
+              }]
+            },
             resultNo : resultNo
           });
         }
@@ -160,7 +169,7 @@ class SearchPartner extends Component {
         <div className="outputArea">
           <img src={this.state.user.item_list[0].photo_url} alt="" id="nijiImg" className="nijiImg" />
           <div>
-            <p id="partnerText" className="partnerText">きみにきめた！</p>
+            <p id="partnerText" className="partnerText">{this.state.user.item_list[0].user_name}<span id="partnerSubText" className="partnerSubText">は</span>きみにきめた！</p>
             <div>
               <dl>
                 <dt>図鑑番号</dt>

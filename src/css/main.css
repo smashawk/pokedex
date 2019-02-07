@@ -5178,3 +5178,7 @@ template {
     font-size: 20px; }
     .searchPartner .partnerText.is-show {
       display: inline-block; }
+  .searchPartner .partnerSubText {
+    display: none; }
+    .searchPartner .partnerSubText.is-show {
+      display: inline-block; }
