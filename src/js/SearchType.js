@@ -29,7 +29,7 @@ class SearchType extends Component {
         <li 
           key={this.props.typeArray[i].key}
           id={this.props.typeArray[i].number.no}
-          className={"img imgType imgNo" + this.props.typeArray[i].number.no}
+          className={"imgIcon imgType imgNo" + this.props.typeArray[i].number.no}
           onClick={e => this.showData(e)}
         >
         </li>
