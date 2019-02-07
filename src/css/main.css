@@ -5159,5 +5159,7 @@ template {
     .searchSectionType .clickTypeText.is-show {
       display: block; }
 
-.searchPartner .outputArea {
-  margin: 0 auto; }
+.searchPartner {
+  margin-top: 30px; }
+  .searchPartner .outputArea {
+    margin: 30px auto 0; }
