@@ -171,7 +171,7 @@ class App extends Component {
     }
 
     console.log(resultNo)
-    resultNo = (resultNo - hiraganaNoArray.length) % 802
+    resultNo = (resultNo + hiraganaNoArray.length) % 802
     console.log(resultNo)
 
 

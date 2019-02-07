@@ -5158,3 +5158,6 @@ template {
     margin: 0; }
     .searchSectionType .clickTypeText.is-show {
       display: block; }
+
+.searchPartner .outputArea {
+  margin: 0 auto; }
