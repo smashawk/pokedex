@@ -5162,11 +5162,16 @@ template {
 .searchPartner {
   margin-top: 30px; }
   .searchPartner .outputArea {
+    display: flex;
+    justify-content: center;
     width: 800px;
     margin: 30px auto 0; }
   .searchPartner .nijiImg {
+    display: none;
     width: 200px;
     height: 200px; }
+    .searchPartner .nijiImg.is-show {
+      display: inline-block; }
   .searchPartner .partnerText {
     display: none;
     font-weight: bold;

@@ -26,7 +26,6 @@ class SearchPartner extends Component {
     this.loadAuth()
         .then(()=>{
           if(! this.state.isLogin){
-            console.log('then')
             return Promise.resolve();
           }
             return this.loadDepartments();
@@ -38,13 +37,10 @@ class SearchPartner extends Component {
     ;
   }
   loadAuth(){
-    console.log('auth')
     return this.httpClient.get('/auth' , {params:{callback:'http://localhost:3000'}})
     .then(this.commonResponseHandling)
     .then((result)=>{
-        console.log('result', result)
       if(result.is_login){
-        console.log('login')
         this.setState({isLogin:true});
       }else if(result.auth_url){
         window.location.href = result.auth_url;
@@ -52,7 +48,6 @@ class SearchPartner extends Component {
     });
   }
   loadDepartments(){
-    console.log('dep')
     return this.httpClient.get('/who/departments/')
     .then(this.commonResponseHandling)
     .then((result)=>{
@@ -69,22 +64,7 @@ class SearchPartner extends Component {
           console.log(this.state.user)
           })
   }
-  loadNijiUser(){
-    // const inputNameValue = document.getElementById('inputName').value;
-
-    //     return this.httpClient.get('/who/search?query=' + inputNameValue)
-    //       .then(this.commonResponseHandling)
-    //       .then((result)=>{
-    //           this.setState({
-    //             user : result,
-    //             resultNo : resultNo
-    //           });
-    //       console.log(this.state.user)
-    //       })
-  }
-
   commonResponseHandling(res){
-      console.debug(res);
       if(res.data.code !== "200"){
           console.error(res.data.data);
           return Promise.reject("API Error:" + res.data.data.message);
@@ -99,13 +79,10 @@ class SearchPartner extends Component {
     const inputName = document.getElementById('inputName');
     var char = inputName.value;
     for(let i = 0; i < inputName.value.length; i++) {
-      console.log(char)
       nameArray.push(char.substr(0,1));
       let j = inputName.value.length - i - 1;
-      console.log(j)
       char = char.slice(-j);
     }
-    console.log(nameArray);
 
     const hiraganaNoArray = [];
     for(let i = 0; i < nameArray.length; i++) {
@@ -136,21 +113,33 @@ class SearchPartner extends Component {
     // this.loadNijiUser();
 
     const inputNameValue = document.getElementById('inputName').value;
+    const partnerText = document.getElementById('partnerText')
+    const nijiImg = document.getElementById('nijiImg')
+
 
     return this.httpClient.get('/who/search?query=' + inputNameValue)
       .then(this.commonResponseHandling)
       .then((result)=>{
+        console.log('result', result)
+        partnerText.classList.add('is-show');
+        if(result.item_list[0]) {
+          nijiImg.classList.add('is-show');
           this.setState({
             user : result,
             resultNo : resultNo
           });
-      const partnerText = document.getElementById('partnerText')
-      partnerText.classList.add('is-show');
+        } else {
+          nijiImg.classList.remove('is-show');
+          this.setState({
+            resultNo : resultNo
+          });
+        }
+
+
       console.log(this.state.user)
       })
 
   }
-
 
   render() {
     
@@ -169,24 +158,28 @@ class SearchPartner extends Component {
           <button onClick={e => this.decidePartner(e)}>決定</button>
         </div>
         <div className="outputArea">
-          <img src={this.state.user.item_list[0].photo_url} alt="" className="nijiImg" />
-          <p id="partnerText" className="partnerText">きみにきめた！</p>
-          <dl>
-            <dt>図鑑番号</dt>
-            <dd>{this.props.normalArray[Number(this.state.resultNo) - 1].no}</dd>
-            <dt>名前</dt>
-            <dd>{this.props.normalArray[Number(this.state.resultNo) - 1].name}</dd>
-            <dt>タイプ</dt>
-            <dd>
-              <span>{this.props.normalArray[Number(this.state.resultNo) - 1].types[0]}</span>
-              <span>{this.props.normalArray[Number(this.state.resultNo) - 1].types[1]}</span>
-            </dd>
-          </dl>
-          <div className={"img imgNo" + this.state.resultNo}></div>
+          <img src={this.state.user.item_list[0].photo_url} alt="" id="nijiImg" className="nijiImg" />
+          <div>
+            <p id="partnerText" className="partnerText">きみにきめた！</p>
+            <div>
+              <dl>
+                <dt>図鑑番号</dt>
+                <dd>{this.props.normalArray[Number(this.state.resultNo) - 1].no}</dd>
+                <dt>名前</dt>
+                <dd>{this.props.normalArray[Number(this.state.resultNo) - 1].name}</dd>
+                <dt>タイプ</dt>
+                <dd>
+                  <span>{this.props.normalArray[Number(this.state.resultNo) - 1].types[0]}</span>
+                  <span>{this.props.normalArray[Number(this.state.resultNo) - 1].types[1]}</span>
+                </dd>
+              </dl>
+              <div className={"img imgNo" + this.state.resultNo}></div>
+            </div>
+          </div>
         </div>
       </section>
 
-  )
+    )
 
   }
 }

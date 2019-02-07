@@ -141,12 +141,18 @@
 .searchPartner {
   margin-top: 30px;
   .outputArea {
+    display: flex;
+    justify-content: center;
     width: 800px;
     margin: 30px auto 0;
   }
   .nijiImg {
+    display: none;
     width: 200px;
     height: 200px;
+    &.is-show {
+      display: inline-block;
+    }
   }
   .partnerText {
     display: none;
