@@ -5166,6 +5166,8 @@ template {
     justify-content: center;
     width: 800px;
     margin: 30px auto 0; }
+  .searchPartner .inputName {
+    width: 230px; }
   .searchPartner .nijiImg {
     display: none;
     width: 200px;
