@@ -5162,4 +5162,14 @@ template {
 .searchPartner {
   margin-top: 30px; }
   .searchPartner .outputArea {
+    width: 800px;
     margin: 30px auto 0; }
+  .searchPartner .nijiImg {
+    width: 200px;
+    height: 200px; }
+  .searchPartner .partnerText {
+    display: none;
+    font-weight: bold;
+    font-size: 20px; }
+    .searchPartner .partnerText.is-show {
+      display: inline-block; }

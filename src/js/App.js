@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import data from '../data/pokemon_data.json';
-import hiragana from '../data/hiragana.json';
 import SearchPokemon from "./SearchPokemon";
 import SearchType from './SearchType';
 import SearchPartner from './SearchPartner';
@@ -14,8 +13,7 @@ class App extends Component {
       typeArray : [],
       subTypeArray : [],
       errorText : '',
-      detailData : '',
-      resultNo : '1'
+      detailData : ''
     };
 
     this.createNormalArray();
@@ -134,50 +132,6 @@ class App extends Component {
 
     this.decideType();
     this.removeTypeText();
-  }
-
-  decidePartner(e) {
-    console.log('decidePartner')
-
-    const nameArray = []
-    const inputName = document.getElementById('inputName');
-    var char = inputName.value;
-    for(let i = 0; i < inputName.value.length; i++) {
-      console.log(char)
-      nameArray.push(char.substr(0,1));
-      let j = inputName.value.length - i - 1;
-      console.log(j)
-      char = char.slice(-j);
-    }
-    console.log(nameArray);
-
-    const hiraganaNoArray = [];
-    for(let i = 0; i < nameArray.length; i++) {
-      for(let j = 0; j < hiragana.length; j++) {
-        if(nameArray[i] === hiragana[j].char) {
-          hiraganaNoArray.push(hiragana[j].number);
-          break;
-        }
-
-      }
-
-    }
-    console.log(hiraganaNoArray);
-
-    // 計算
-    let resultNo = 1;
-    for (let i = 0; i < hiraganaNoArray.length; i++) {
-      resultNo *= hiraganaNoArray[i];
-    }
-
-    console.log(resultNo)
-    resultNo = (resultNo + hiraganaNoArray.length) % 802
-    console.log(resultNo)
-
-
-    this.setState({
-      resultNo : resultNo
-    })
   }
   
   render() {
