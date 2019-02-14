@@ -38,7 +38,7 @@ class SearchPartner extends Component {
     ;
   }
   loadAuth(){
-    return this.httpClient.get('/auth' , {params:{callback:'http://localhost:3000'}})
+    return this.httpClient.get('/auth' , {params:{callback:'https://smashawk.github.io/pokedex/'}})
     .then(this.commonResponseHandling)
     .then((result)=>{
       if(result.is_login){
@@ -157,7 +157,7 @@ class SearchPartner extends Component {
       <section className="searchPartner">
         <div className="inputArea">
         <h2>3. あなたの相棒ポケモン検索</h2>
-          <p className="inputAreaText">※名前はひらがなで</p>
+          <p className="inputAreaText">※フルネーム推奨</p>
           <input 
             id="inputName"
             className="inputName"
