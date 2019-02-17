@@ -134,6 +134,7 @@ class App extends Component {
     this.removeTypeText();
   }
   
+  
   render() {
     console.log('render');
     
